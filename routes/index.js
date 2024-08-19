@@ -9,6 +9,7 @@ router.get('/statuses', function(req, res, next) {
 
     Status
         .find({})
+        .sort({creation_date: -1})
         .skip(page * size)
         .limit(size)
         .then(
